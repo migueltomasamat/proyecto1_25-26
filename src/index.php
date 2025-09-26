@@ -1,17 +1,42 @@
-<html>
-<head>
-    <title>Ejercicios DWES</title>
-</head>
-<body>
+<?php
 
-    <h1>Ejercicios de Desarrollo Web en Entorno Servidor</h1>
+include_once "vendor/autoload.php";
+include_once "env.php";
 
-    <ol>
-        <li><a href="ejercicios/hola-mundo.php">Hola Mundo</a></li>
-        <li><a href="ejercicios/bucle.php">Bucle FOR</a></li>
+use Phroute\Phroute\Exception\HttpRouteNotFoundException;
+use Phroute\Phroute\RouteCollector;
 
-    </ol>
+$router = new RouteCollector();
 
-</body>
 
-</html>
+//Definición de rutas
+$router->any('/', function(){
+
+    return 'Página principal';
+});
+
+$router->get('/administracion',function(){
+    include_once DIRECTORIO_VISTAS_ADMINISTRACION . "welcome.php";
+});
+
+$router->get('/admin-peliculas',function(){
+    include_once DIRECTORIO_VISTAS_ADMINISTRACION . "peliculas.php";
+});
+$router->get('/login',function(){
+    include_once DIRECTORIO_VISTAS_ADMINISTRACION . "login.php";
+});
+
+
+
+//Resolución de rutas
+$dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
+try {
+    $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+}
+catch(HttpRouteNotFoundException $e){
+    include_once DIRECTORIO_VISTAS_ADMINISTRACION."404.html";
+    die();
+    $response= "";
+}
+// Print out the value returned from the dispatched function
+echo $response;
