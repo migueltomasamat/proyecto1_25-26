@@ -27,6 +27,18 @@ $router->get('/login',function(){
     include_once DIRECTORIO_VISTAS_ADMINISTRACION . "login.php";
 });
 
+$router->post('/login',function(){
+    //var_dump($_POST);
+
+    $datosUsuario['usuario'] = $_POST['usuario'];
+    $datosUsuario['password'] = $_POST['password'];
+    return json_encode($datosUsuario);
+});
+
+$router->delete('/pelicula/{id:\d+}',function($id){
+    echo "Se borraria la pelicula $id";
+});
+
 
 $router->get('/ejemplofuncion',function(){
 
@@ -36,13 +48,29 @@ $router->get('/ejemplofuncion',function(){
         echo $dniParametro;
 
         echo letraDNI($dniParametro);
-        echo ejemploArrayAsociativo();
     }else{
         echo "Parametro recibido de forma incorrecta";
     }
+});
 
+$router->get('/calcular-letra-dni',function(){
+
+    $resultado = "";
+    $dni=$_GET['dni'];
+    $letra="";
+    if (isset($_GET['dni'])){
+        $resultado = "La letra correspondiente al DNI:" . $_GET['dni'] . " es: ";
+        $resultado .= letraDNI($_GET['dni']);
+        $letra=letraDNI($_GET['dni']);
+
+    }else{
+        $resultado = "No se ha podido calcular la letra del DNI. 
+        Nombre de parámetro incorrecto";
+    }
+    include_once DIRECTORIO_VISTAS_ADMINISTRACION."letradni.php";
 
 });
+
 
 
 //Resolución de rutas
