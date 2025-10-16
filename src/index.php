@@ -6,11 +6,58 @@ include_once "auxiliar/auxfunctions.php";
 
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
 use Phroute\Phroute\RouteCollector;
+use App\Controller\UserController;
 
 $router = new RouteCollector();
 
 
 //Definición de rutas
+$router->get('/user',[UserController::class,'index']);
+$router->get('/user/{id}',[UserController::class,'show']);
+$router->post('/user',[UserController::class,'store']);
+$router->put('/user/{id}',[UserController::class,'update']);
+$router->delete('/user/{id}',[UserController::class,'destroy']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Ejemplos de definición de rutas
 $router->any('/', function(){
 
     return 'Página principal';
