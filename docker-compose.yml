@@ -7,6 +7,8 @@ services:
       dockerfile: Dockerfile
     container_name: php_apache
 
+    user: matomas:matomas
+
     volumes:
       - ./src:/var/www/html
       - .docker/apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf

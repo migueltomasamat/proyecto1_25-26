@@ -7,6 +7,7 @@ include_once "auxiliar/auxfunctions.php";
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
 use Phroute\Phroute\RouteCollector;
 use App\Controller\UserController;
+use App\Controller\DirectorController;
 
 $router = new RouteCollector();
 
@@ -19,7 +20,13 @@ $router->put('/user/{id}',[UserController::class,'update']);
 $router->delete('/user/{id}',[UserController::class,'destroy']);
 
 
+$router->get('/director',[DirectorController::class,'index']);
+$router->get('/director/{id}',[DirectorController::class,'show']);
+$router->post('/director',[DirectorController::class,'store']);
+$router->put('/director/{id}',[DirectorController::class,'update']);
+$router->delete('/director/{id}',[DirectorController::class,'destroy']);
 
+$router->get('/create-director',[DirectorController::class,'create']);
 
 
 

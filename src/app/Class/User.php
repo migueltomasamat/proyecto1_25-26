@@ -2,7 +2,7 @@
 
 namespace App\Class;
 
-use app\Enum\UserType;
+use App\Enum\UserType;
 
 class User
 {
