@@ -11,11 +11,20 @@ use App\Controller\DirectorController;
 
 $router = new RouteCollector();
 
+$router->get('/',function (){
+    include_once DIRECTORIO_VISTAS_FRONTEND."index.php";
+});
+
+
+$router->get('/login',function (){
+    include_once DIRECTORIO_VISTAS_FRONTEND."login.php";
+});
 
 //Definición de rutas
 //Rutas para la clase usuario
 //Vistas de la aplicacion
 $router->get('/user/create',[UserController::class,'create']);
+$router->post('/user/login',[UserController::class,'verify']);
 $router->get('/user/{id}/edit',[UserController::class,'edit']);
 
 
@@ -71,7 +80,7 @@ $router->get('/create-director',[DirectorController::class,'create']);
 
 
 //Ejemplos de definición de rutas
-$router->any('/', function(){
+/*$router->any('/', function(){
 
     return 'Página principal';
 });
@@ -81,18 +90,7 @@ $router->get('/administracion',function(){
 });
 
 $router->get('/admin-peliculas',function(){
-    include_once DIRECTORIO_VISTAS_ADMINISTRACION . "peliculas.php";
-});
-$router->get('/login',function(){
-    include_once DIRECTORIO_VISTAS_ADMINISTRACION . "login.php";
-});
-
-$router->post('/login',function(){
-    //var_dump($_POST);
-
-    $datosUsuario['usuario'] = $_POST['usuario'];
-    $datosUsuario['password'] = $_POST['password'];
-    return json_encode($datosUsuario);
+    include_once DIRECTORIO_VISTAS_ADMINISTRACION . "usuarios.php";
 });
 
 $router->delete('/pelicula/{id:\d+}',function($id){
@@ -131,7 +129,7 @@ $router->get('/calcular-letra-dni',function(){
 
 });
 
-
+*/
 
 //Resolución de rutas
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
