@@ -61,7 +61,9 @@ class UserController implements ControllerInterface
     }
 
     public function destroy($id){
-
+        header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Methods: GET, POST, PUT,DELETE OPTIONS");
+        return "Han llamado con el $id";
     }
 
     public function verify(){

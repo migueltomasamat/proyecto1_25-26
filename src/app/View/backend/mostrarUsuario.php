@@ -49,7 +49,6 @@ include_once DIRECTORIO_TEMPLATE_BACKEND."main.php";
             }
             function peticionDelete(){
 
-                console.log ("Vamos a realizar una petición de borrado");
                 const requestOptions = {
                     method: "DELETE",
                     redirect: "follow"

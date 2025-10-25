@@ -12,10 +12,6 @@ use App\Controller\DirectorController;
 
 $router = new RouteCollector();
 
-$router->options('',function(){
-    header('Access-Control-Allow-Origin: *');
-});
-
 $router->get('/',function (){
     include_once DIRECTORIO_VISTAS_FRONTEND."index.php";
 });
