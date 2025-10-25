@@ -45,7 +45,6 @@ class UserController implements ControllerInterface
     }
 
     public function edit($id){
-
         //Tenemos que buscar en la base de datos el usuario que nos han pasado con ID
         //$usuario=UserModel::loadUser($id)
         $usuario = new User('paula','paula@paula.com','holapaula');
@@ -57,7 +56,7 @@ class UserController implements ControllerInterface
     }
 
     public function update($id){
-        return "hola";
+
 
     }
 

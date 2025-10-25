@@ -30,8 +30,9 @@
     </nav>
     <div class="caja">
         <h2>Iniciar sesión</h2>
+        <form action="/user/login" method="post">
         <div class="form">
-            <form action="/user/login" method="post">
+
                 <input
                     type="text"
                     placeholder="Correo electrónico o número de teléfono"

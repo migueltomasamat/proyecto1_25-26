@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix Website Clone</title>
-    <link rel="stylesheet" href="<?=DIRECTORIO_CSS_FRONTEND?>style.css"><!-- Aplico css externo -->
+    <link rel="stylesheet" type="text/css" href="<?=DIRECTORIO_CSS_FRONTEND?>style.css"/><!-- Aplico css externo -->
     <link rel="shortcut icon" type="image/jpg" href="<?=DIRECTORIO_IMG_FRONTEND?>netflix-flavicon.png" />
     <meta name="keywords" content="html,css,clon netflix" />
     <meta name="description" content="Clon de la página principal de Netflix España hecho con HTML y CSS para la asignatura de Lenguajes de Marcas del IES Fernando Wirtz" />
@@ -51,14 +52,14 @@
                 <p>Smart TV, Playstation, Xbox, Chromecast, Apple TV, reproductores Blu-ray y muchos más.</p>
             </div>
             <div class="columna-imagen">
-                <img src="./img/index/elemento1.png" alt="imagen1">
+                <img src="<?=DIRECTORIO_IMG_FRONTEND?>elemento1.png" alt="imagen1">
             </div>
         </div>
     </div>
     <div class="elementos">
         <div class="fila">
             <div class="columna-imagen">
-                <img src="./img/index/elemento2.png" alt="imagen2">
+                <img src="<?=DIRECTORIO_IMG_FRONTEND?>elemento2.png" alt="imagen2">
             </div>
             <div class="columna-texto">
                 <h2>Disfruta en todas partes.</h2>
@@ -73,14 +74,14 @@
                 <p>Deja que los niños vivan aventuras con sus personajes favoritos en un espacio diseñado exclusivamente para ellos, gratis con tu suscripción.</p>
             </div>
             <div class="columna-imagen">
-                <img src="./img/index/elemento3.png" alt="imagen3">
+                <img src="<?=DIRECTORIO_IMG_FRONTEND?>elemento3.png" alt="imagen3">
             </div>
         </div>
     </div>
     <div class="elementos">
         <div class="fila">
             <div class="columna-imagen">
-                <img src="./img/index/elemento4.png" alt="imagen4">
+                <img src="<?=DIRECTORIO_IMG_FRONTEND?>elemento4.png" alt="imagen4">
             </div>
             <div class="columna-texto">
                 <h2>Descárgate tus series favoritas para verlas sin conexión.</h2>
@@ -202,7 +203,7 @@
                 <a href="#">Garantía legal</a>
             </div>
         </div>
-        <button class="idioma">Español<img src="img/down-icon.png"></button>
+        <button class="idioma">Español<img src="<?=DIRECTORIO_IMG_FRONTEND?>down-icon.png"></button>
         <p class="texto-copyright">Netflix España</p>
     </div>
 </body>

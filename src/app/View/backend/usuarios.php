@@ -12,8 +12,8 @@ include_once DIRECTORIO_TEMPLATE_BACKEND."main.php";
         <?php
             foreach ($usuarios as $usuario){
         ?>
-            <div class="card" style="width: 18rem;">
-                <img src="<?=DIRECTORIO_IMG_BACKEND?>user_generic.png" class="card-img-top" alt="...">
+            <div class="card m-1" style="width: 18rem;">
+                <img src="<?=DIRECTORIO_IMG_BACKEND?>user_generic.png" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title"><?=$usuario->getUsername()?></h5>
                     <p class="card-text"><?=$usuario->getEmail()?></p>

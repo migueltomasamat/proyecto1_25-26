@@ -35,27 +35,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <a class="nav-link d-flex align-items-center gap-2" href="/user">
                         <svg class="bi" aria-hidden="true">
                             <use xlink:href="#people"></use>
                         </svg>
-                        Estadísticas
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
-                        <svg class="bi" aria-hidden="true">
-                            <use xlink:href="#graph-up"></use>
-                        </svg>
-                        Reports
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
-                        <svg class="bi" aria-hidden="true">
-                            <use xlink:href="#puzzle"></use>
-                        </svg>
-                        Integrations
+                        Usuarios
                     </a>
                 </li>
             </ul>

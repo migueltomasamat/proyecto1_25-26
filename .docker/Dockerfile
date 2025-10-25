@@ -1,6 +1,7 @@
 FROM php:8.3-apache
 
 RUN a2enmod rewrite
+RUN a2enmod headers
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
       procps \
@@ -39,9 +40,9 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 
 WORKDIR /var/www/html
 
-ARG USERNAME=matomas
-ARG USER_UID=2012
-ARG USER_GID=5001
+ARG USERNAME=miguel
+ARG USER_UID=1000
+ARG USER_GID=1000
 
 RUN groupadd --gid $USER_GID $USERNAME \
     && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \

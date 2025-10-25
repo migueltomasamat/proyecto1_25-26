@@ -9,7 +9,12 @@ use Phroute\Phroute\RouteCollector;
 use App\Controller\UserController;
 use App\Controller\DirectorController;
 
+
 $router = new RouteCollector();
+
+$router->options('',function(){
+    header('Access-Control-Allow-Origin: *');
+});
 
 $router->get('/',function (){
     include_once DIRECTORIO_VISTAS_FRONTEND."index.php";
@@ -137,7 +142,7 @@ try {
     $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 }
 catch(HttpRouteNotFoundException $e){
-    return include_once DIRECTORIO_VISTAS_ADMINISTRACION."404.html";
+    return include_once DIRECTORIO_VISTAS."404.html";
 }
 // Print out the value returned from the dispatched function
 echo $response;
